@@ -1,6 +1,6 @@
 # Quick Start
 
-Ecosystem Plugin for Fantom support in Ape
+Ecosystem Plugin for Harmony support in Ape
 
 ## Dependencies
 
@@ -13,7 +13,7 @@ Ecosystem Plugin for Fantom support in Ape
 You can install this plugin using `ape`:
 
 ```bash
-ape plugins install fantom
+ape plugins install harmony
 ```
 
 or via config file:
@@ -21,7 +21,7 @@ or via config file:
 ```yaml
 # ape-config.yaml
 plugins:
-  - name: fantom
+  - name: harmony
 ```
 
 ### via `pip`
@@ -29,7 +29,7 @@ plugins:
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install ape-fantom
+pip install ape-harmony
 ```
 
 ### via `setuptools`
@@ -37,15 +37,15 @@ pip install ape-fantom
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
 ```bash
-git clone https://github.com/ApeWorX/ape-fantom.git
-cd ape-fantom
+git clone https://github.com/ApeWorX/ape-harmony.git
+cd ape_harmony
 python3 setup.py install
 ```
 
 ## Quick Usage
 
-Installing this plugin adds support for the Fantom ecosystem:
+Installing this plugin adds support for the Harmony ecosystem:
 
 ```bash
-ape console --network fantom:opera
+ape console --network harmony:mainnet
 ```
