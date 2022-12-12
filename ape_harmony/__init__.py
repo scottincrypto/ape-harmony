@@ -4,32 +4,32 @@ from ape.api.networks import LOCAL_NETWORK_NAME
 from ape_geth import GethProvider
 from ape_test import LocalProvider
 
-from .ecosystem import NETWORKS, Fantom, FantomConfig
+from .ecosystem import NETWORKS, Harmony, HarmonyConfig
 
 
 @plugins.register(plugins.Config)
 def config_class():
-    return FantomConfig
+    return HarmonyConfig
 
 
 @plugins.register(plugins.EcosystemPlugin)
 def ecosystems():
-    yield Fantom
+    yield Harmony
 
 
 @plugins.register(plugins.NetworkPlugin)
 def networks():
     for network_name, network_params in NETWORKS.items():
-        yield "fantom", network_name, create_network_type(*network_params)
-        yield "fantom", f"{network_name}-fork", NetworkAPI
+        yield "harmony", network_name, create_network_type(*network_params)
+        yield "harmony", f"{network_name}-fork", NetworkAPI
 
     # NOTE: This works for development providers, as they get chain_id from themselves
-    yield "fantom", LOCAL_NETWORK_NAME, NetworkAPI
+    yield "harmony", LOCAL_NETWORK_NAME, NetworkAPI
 
 
 @plugins.register(plugins.ProviderPlugin)
 def providers():
     for network_name in NETWORKS:
-        yield "fantom", network_name, GethProvider
+        yield "harmony", network_name, GethProvider
 
-    yield "fantom", LOCAL_NETWORK_NAME, LocalProvider
+    yield "harmony", LOCAL_NETWORK_NAME, LocalProvider

@@ -6,8 +6,9 @@ from ape_ethereum.ecosystem import Ethereum, NetworkConfig
 
 NETWORKS = {
     # chain_id, network_id
-    "opera": (250, 250),
-    "testnet": (4002, 4002),
+    "mainnet": (1666600000, 1666600000),
+    "testnet": (1666700000, 1666700000),
+    "devnet": (1666900000, 1666900000),
 }
 
 
@@ -26,16 +27,18 @@ def _create_local_config(default_provider: Optional[str] = None) -> NetworkConfi
     )
 
 
-class FantomConfig(PluginConfig):
-    opera: NetworkConfig = _create_network_config()
-    opera_fork: NetworkConfig = _create_local_config()
+class HarmonyConfig(PluginConfig):
+    mainnet: NetworkConfig = _create_network_config()
+    mainnet_fork: NetworkConfig = _create_local_config()
     testnet: NetworkConfig = _create_network_config()
     testnet_fork: NetworkConfig = _create_local_config()
+    devnet: NetworkConfig = _create_network_config()
+    devnet_fork: NetworkConfig = _create_local_config()
     local: NetworkConfig = _create_local_config(default_provider="test")
     default_network: str = LOCAL_NETWORK_NAME
 
 
-class Fantom(Ethereum):
+class Harmony(Ethereum):
     @property
-    def config(self) -> FantomConfig:  # type: ignore
-        return self.config_manager.get_config("fantom")  # type: ignore
+    def config(self) -> HarmonyConfig:  # type: ignore
+        return self.config_manager.get_config("harmony")  # type: ignore

@@ -1,8 +1,10 @@
 EXPECTED_OUTPUT = """
-fantom
-├── opera
+harmony
+├── mainnet
 │   └── geth  (default)
 ├── testnet
+│   └── geth  (default)
+├── devnet
 │   └── geth  (default)
 └── local  (default)
     └── test  (default)
@@ -14,7 +16,7 @@ def assert_rich_text(actual: str, expected: str):
     The output from `rich` causes a bunch of extra spaces to
     appear at the end of each line. For easier testing, we remove those here.
     """
-    actual = f"fantom{actual.split('fantom')[-1]}"
+    actual = f"harmony{actual.split('harmony')[-1]}"
     if "ethereum" in actual:
         actual = actual.split("ethereum")[0]
 
